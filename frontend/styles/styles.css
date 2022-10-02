@@ -1,0 +1,92 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+img {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+
+/* Login page */
+
+/* Hero */
+.hero {
+    background: url("../assets/images/dating-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Hero container */
+.hero-container{
+    width: 50vw;
+    height: 30vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+.hero-container-title{
+    justify-self: start;
+    font-size: 2vw;
+}
+.input{
+    height: 3vw;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #98d7e6;
+    margin-top: 3vw;
+    padding: 1px 2px 1px 5px;
+}
+.input::placeholder{
+    color: #98d7e6;
+    font-size: 1vw;
+}
+.hero-container-register-now{
+    align-self: flex-end;
+    margin:2vw 1vw 1vw 1vw;
+    font-size: 1.2vw;
+}
+/* Utilises */
+.color-blue{
+    color: #98d7e6;
+    margin-left: 1vw;
+}
+.cursor-poiner{
+    cursor: pointer;
+}
+.btn{
+    height: 3vw;
+    width: 10vw;
+    border-color: #98d7e6;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1vw;
+    font-weight: bolder;
+}
+.marin-top-2{
+    margin-top: 2vw;
+}
+/* .flex{
+    display: flex;
+    flex-direction: row;
+}
+.justify-content-center{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+} */
