@@ -61,6 +61,70 @@ img {
     width: 14vw;
     font-size: 1vw;
 }
+
+/* Home */
+.home-nav{
+    height: 15vh;
+    color: black;
+}
+.home-nav>img{
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+}
+.home-users-from{
+    background-color: #98d7e6;
+    height: 5vw;
+    width: 100%;
+    padding: 1vw 2vw 1vw 2vw;
+    color: black;
+}
+.home-users-from>p{
+    font-size: 2vw;
+}
+.users{
+    display: flex;
+    flex-wrap: wrap;
+}
+.user{
+    margin: 1vw 1vw 0vw 1vw;
+    height: 18vw;
+    width: 30vw;
+    border-color: #98d7e6;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 15px;
+    padding: 1vw 2vw 1vw 2vw;
+    display: flex;
+    flex-direction: column;
+}
+.user-profile-image{
+    height: 5vw;
+    width: 5vw;
+    border-radius: 50%;
+}
+.user-first-child{
+    display: flex;
+    justify-content: space-between;
+}
+.user-second-child{
+    margin-top: 1vw;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.user-third-child{
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-third-child>button{
+    color:red;
+    background-color: white;
+    cursor: pointer;
+}
 /* Utilises */
 .margin-left-1{
     margin-left: 1vw;
@@ -68,7 +132,7 @@ img {
 .color-blue{
     color: #98d7e6;
 }
-.cursor-poiner{
+.cursor-pointer{
     cursor: pointer;
 }
 .btn{
@@ -114,4 +178,10 @@ img {
 }
 .font-weight-bloder{
     font-weight: bolder;
+}
+.justify-content-end{
+    justify-content: end;
+}
+.justify-right-3{
+   margin-right: 3vw;
 }
