@@ -13,7 +13,6 @@ img {
     position: relative;
 }
 
-
 /* Login page */
 
 /* Hero */
@@ -25,20 +24,13 @@ img {
     position: relative;
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 /* Hero container */
 .hero-container{
     width: 50vw;
-    height: 30vw;
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
 }
+
 .hero-container-title{
     justify-self: start;
     font-size: 2vw;
@@ -49,22 +41,32 @@ img {
     border-style: solid;
     border-width: 2px;
     border-color: #98d7e6;
-    margin-top: 3vw;
     padding: 1px 2px 1px 5px;
 }
 .input::placeholder{
     color: #98d7e6;
     font-size: 1vw;
 }
+
+/* Register */
 .hero-container-register-now{
     align-self: flex-end;
     margin:2vw 1vw 1vw 1vw;
     font-size: 1.2vw;
 }
+.hero-container-register-now a{
+    text-decoration: none;
+}
+.hero-container-gender{
+    width: 14vw;
+    font-size: 1vw;
+}
 /* Utilises */
+.margin-left-1{
+    margin-left: 1vw;
+}
 .color-blue{
     color: #98d7e6;
-    margin-left: 1vw;
 }
 .cursor-poiner{
     cursor: pointer;
@@ -78,10 +80,13 @@ img {
     font-size: 1vw;
     font-weight: bolder;
 }
-.marin-top-2{
+.margin-top-1{
+    margin-top: 1vw;
+}
+.margin-top-2{
     margin-top: 2vw;
 }
-/* .flex{
+.flex{
     display: flex;
     flex-direction: row;
 }
@@ -89,4 +94,24 @@ img {
     justify-content: center;
     align-items: center;
     align-content: center;
-} */
+}
+.flex-place-items-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.height-30{
+    height: 30vw;
+}
+.height-70{
+    height: 48vw;
+}
+.text-area{
+    width: 17vw;
+}
+.font-weight-bloder{
+    font-weight: bolder;
+}

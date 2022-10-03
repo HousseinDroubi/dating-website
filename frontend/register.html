@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Register</title>
+</head>
+    <body>
+        <!-- Start hero -->
+        <section class="hero flex-place-items-center">
+
+            <!-- Start hero container-->
+            <section class="hero-container flex-place-items-center flex-column height-70">
+                <div>
+                    <h1 class="hero-container-title">Register</h1>
+                </div>
+                <div>
+                    <input type="text" id="registered_email" class="input margin-top-1" placeholder="Email">
+                </div>
+                <div>
+                    <input type="text" id="register_username" class="input margin-top-1" placeholder="Username">
+                </div>
+                <div>
+                    <input type="text" id="register_passowrd" class="input margin-top-1" placeholder="Password">
+                </div>
+                <div>
+                    <input type="number" id="register_age" class="input margin-top-1" placeholder="age" maxlength="3">
+                </div>
+                <div>
+                    <button class="btn margin-top-2" id="register_get_location">Get location</button>
+                </div>
+                <div class="hero-container-gender flex flex-column">
+                    <div>
+                        <p class="margin-top-1 color-blue font-weight-bloder">Gender</p>
+                    </div>
+                    <div>
+                        <input type="radio" id="register_gender_male" class="margin-top-1 raido" name="gender" checked="checked">
+                        <label for="register_gender_male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="register_gender_female" class="margin-top-1 raido" name="gender">
+                        <label for="register_gender_female">Female</label>
+                    </div>
+                    <p class="margin-top-1 color-blue font-weight-bloder">Interested in</p>
+                    <div>
+                        <input type="checkbox" id="register_interested_male" class="margin-top-1" name="interested">
+                        <label for="register_gender_male">Male</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="register_interested_female" class="margin-top-1" name="interested">
+                        <label for="register_gender_female">Female</label>
+                    </div>
+                </div>
+                <div>
+                    <textarea id="register_bio" class="text-area input input margin-top-1" rows="4" cols="40" placeholder="Bio..."></textarea>
+                </div>
+                <div>
+                    <button class="btn margin-top-2" id="register_button">Register</button>
+                </div>
+            </section>
+            <!-- End hero container-->
+
+        </section>
+        <!-- End hero -->
+    </body>
+</html>
