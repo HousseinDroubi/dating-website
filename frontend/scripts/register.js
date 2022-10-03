@@ -1,3 +1,4 @@
+// Define all variables of the register papge
 const register_email = document.getElementById("register_email");
 const register_username = document.getElementById("register_username");
 const register_passowrd = document.getElementById("register_passowrd");
@@ -12,7 +13,7 @@ const register_error= document.getElementById("register_error");
 const register_button = document.getElementById("register_button");
 const url_login = `http://127.0.0.1:8000/api/v0.1/register`;
 
-
+// Get the gender and what does he interesting in, and the returns will be similar to the interesters table into DataBase.
 const getInterested = () =>{
     if(register_gender_male.checked){
         if(register_interested_male.checked && register_interested_female.checked){
@@ -33,16 +34,18 @@ const getInterested = () =>{
     }
 }
 
-
+// Add the user to Database after all validations
 const registerUser = async (url_login) =>{
-
+    // Get interested in.
     const interested=getInterested();
+    // Gender will be M or F.
     let gender;
     if(register_gender_male.checked){
         gender='M';
     }else{
         gender='F';
     }
+    // Below are the parameters of this axios funtion.
     api_data = {'email':register_email.value,
                 'username':register_username.value,
                 'password':register_passowrd.value,
@@ -54,22 +57,25 @@ const registerUser = async (url_login) =>{
                 'interested':interested,
                 };
     try{
-        return await axios.post(
-            url_login,
-            api_data,
+        await axios.post(
+        url_login,
+        api_data,
         ).then((response)=>{
+            // If the response was 'User successfully registered', the user will be redirected to login page.
             if(response.data.message=='User successfully registered'){  
                 window.location.href = './login.html';
            }else{
+            // Here, the email or password might be taken.
             register_error.innerText='Try another email and username!';
            }
         });
     }catch(error){
+        // Here, something went wrong.
         register_error.innerText='Something went wrong';
     }
 }
 
-
+// Put all validations we need in order to get the expected entries.
 const validate = () =>{
     if(register_email.value=='' || register_email.value.length<5 ||  register_email.value.length>30){
         register_error.innerText='Email required and length must be between 5 and 30';
@@ -87,9 +93,8 @@ const validate = () =>{
         register_error.innerText='Bio required and length must be between 4 and 50';
     }else{
         register_error.innerText='';
-       const response_register= registerUser(url_login);
+        registerUser(url_login);
     }
 }
-
-
+// Listener on button register.
 register_button.addEventListener('click',validate);
