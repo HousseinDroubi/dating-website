@@ -11,7 +11,7 @@ const register_interested_female = document.getElementById("register_interested_
 const register_bio = document.getElementById("register_bio");
 const register_error= document.getElementById("register_error");
 const register_button = document.getElementById("register_button");
-const url_login = `http://127.0.0.1:8000/api/v0.1/register`;
+const url_register = `http://127.0.0.1:8000/api/v0.1/register`;
 
 // Get the gender and what does he interesting in, and the returns will be similar to the interesters table into DataBase.
 const getInterested = () =>{
@@ -35,7 +35,7 @@ const getInterested = () =>{
 }
 
 // Add the user to Database after all validations
-const registerUser = async (url_login) =>{
+const registerUser = async () =>{
     // Get interested in.
     const interested=getInterested();
     // Gender will be M or F.
@@ -58,7 +58,7 @@ const registerUser = async (url_login) =>{
                 };
     try{
         await axios.post(
-        url_login,
+        url_register,
         api_data,
         ).then((response)=>{
             // If the response was 'User successfully registered', the user will be redirected to login page.
@@ -93,7 +93,7 @@ const validate = () =>{
         register_error.innerText='Bio required and length must be between 4 and 50';
     }else{
         register_error.innerText='';
-        registerUser(url_login);
+        registerUser();
     }
 }
 // Listener on button register.
