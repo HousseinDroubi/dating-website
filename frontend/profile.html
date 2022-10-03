@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Profile</title>
+</head>
+    <body>
+        <!-- Start hero -->
+        <section class="hero flex-place-items-center background-color-blue">
+
+            <!-- Start hero container-->
+            <section class="hero-container flex-place-items-center flex-column height-70">
+                <div>
+                    <h1 class="hero-container-title">Edit profile</h1>
+                </div>
+                <div>
+                    <img src="assets/images/default-user.jpg" alt="" class=" margin-top-2 cursor-pointer resize-image" id="home_profile">
+                </div>
+                <div>
+                    <label for="edit_profile_pick_up" class="cursor-pointer font-weight-bloder">Select Image</label>
+                    <input type="file" id="edit_profile_pick_up" class="margin-top-2 display-none">
+                </div>
+                <div>
+                    <input type="text" id="edit_profile_username" class="input margin-top-1" placeholder="Username">
+                </div>
+                <div>
+                    <input type="number" id="edit_profile_age" class="input margin-top-1" placeholder="age" maxlength="3">
+                </div>
+                <div>
+                    <button class="btn margin-top-2" id="edit_profile_get_location">Get location</button>
+                </div>
+                <div class="hero-container-gender flex flex-column">
+                    <div>
+                        <p class="margin-top-1 color-blue font-weight-bloder">Gender</p>
+                    </div>
+                    <div>
+                        <input type="radio" id="edit_profile_gender_male" class="margin-top-1 raido" name="gender" checked="checked">
+                        <label for="edit_profile_gender_male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="edit_profile_gender_female" class="margin-top-1 raido" name="gender">
+                        <label for="edit_profile_gender_female">Female</label>
+                    </div>
+                    <p class="margin-top-1 color-blue font-weight-bloder">Interested in</p>
+                    <div>
+                        <input type="checkbox" id="edit_profile_interested_male" class="margin-top-1" name="interested">
+                        <label for="edit_profile_gender_male">Male</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="edit_profile_interested_female" class="margin-top-1" name="interested">
+                        <label for="edit_profile_gender_female">Female</label>
+                    </div>
+
+                    <p class="margin-top-1 color-blue font-weight-bloder">Incognito mode</p>
+                    <div>
+                        <input type="radio" id="edit_profile_incognito_on" class="margin-top-1" name="incognito">
+                        <label for="edit_profile_incognito_on">Trun on</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="edit_profile_incognito_off" class="margin-top-1" name="incognito" checked="checked">
+                        <label for="edit_profile_incognito_off">Trun off</label>
+                    </div>
+                </div>
+                <div>
+                    <textarea id="edit_profile_bio" class="text-area input input margin-top-1" rows="4" cols="40" placeholder="Bio..."></textarea>
+                </div>
+                <div>
+                    <button class="btn margin-top-2" id="edit_profile_button">Edit</button>
+                </div>
+            </section>
+            <!-- End hero container-->
+
+        </section>
+        <!-- End hero -->
+    </body>
+</html>
