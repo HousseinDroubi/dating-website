@@ -279,3 +279,6 @@ img {
 .align-self-end{
     align-self: flex-end;
 }
+.error{
+    color: red;
+}
