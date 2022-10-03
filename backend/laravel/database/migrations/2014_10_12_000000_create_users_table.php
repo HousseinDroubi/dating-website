@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration{
             $table->integer('age')->unsigned();
             $table->string('location');
             $table->integer('incognito')->default('0');
+            $table->integer('interested')->default('0');
             $table->timestamps();
         });
     }

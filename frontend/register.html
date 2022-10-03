@@ -23,13 +23,13 @@
                     <input type="text" id="register_username" class="input margin-top-1" placeholder="Username">
                 </div>
                 <div>
-                    <input type="text" id="register_passowrd" class="input margin-top-1" placeholder="Password">
+                    <input type="password" id="register_passowrd" class="input margin-top-1" placeholder="Password">
                 </div>
                 <div>
                     <input type="number" id="register_age" class="input margin-top-1" placeholder="age" maxlength="3">
                 </div>
                 <div>
-                    <button class="btn margin-top-2" id="register_get_location">Get location</button>
+                    <input type="text" id="register_location" class="input margin-top-1" placeholder="location">
                 </div>
                 <div class="hero-container-gender flex flex-column">
                     <div>
@@ -57,7 +57,7 @@
                     <textarea id="register_bio" class="text-area input input margin-top-1" rows="4" cols="40" placeholder="Bio..."></textarea>
                 </div>
                 <div>
-                    <p class="error font-weight-bloder" id="login_error"></p>
+                    <p class="error font-weight-bloder" id="register_error"></p>
                 </div>
                 <div>
                     <button class="btn margin-top-2" id="register_button">Register</button>
@@ -67,7 +67,8 @@
 
         </section>
         <!-- End hero -->
-        <!-- <script src="./scripts/register.js" type="module"></script> -->
-        <script src="http://localhost/dating-website/frontend/scripts/register.js" type="module"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+        <script src="./scripts/register.js" type="text/javascript"></script>
     </body>
 </html>

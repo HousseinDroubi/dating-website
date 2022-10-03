@@ -13,14 +13,15 @@ class AuthController extends Controller{
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|string|min:2|max:100',
-            'email' => 'required|string|email|max:100|unique:users',
-            'password' => 'required|string|min:6',
+            'username' => 'required|string|min:3|max:20',
+            'email' => 'required|string|email|min:5|max:30|unique:users',
+            'password' => 'required|string|min:5|max:30',
             'gender' => 'required|string|min:1|max:1',
-            'age' => 'required|integer|min:2|max:100',
-            'location' => 'required|string|min:3|max:20',
-            'bio' => 'string|min:3|max:20',
+            'age' => 'required|integer|min:2|max:99',
+            'location' => 'required|string|min:5|max:20',
+            'bio' => 'required|string|min:3|max:50',
             'image' => 'string',
+            'interested' => 'required|integer|min:1|max:6',
         ]);
 
         if($validator->fails()) {
@@ -36,6 +37,7 @@ class AuthController extends Controller{
                 'bio' => $request->bio,
                 'location' => $request->location,
                 'image' => $request->image,
+                'interested' => $request->interested,
             ]);
 
         return response()->json([
