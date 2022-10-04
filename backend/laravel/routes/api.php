@@ -15,12 +15,13 @@ Route::group(["prefix"=> "v0.1"], function(){
         Route::post("/me", [AuthController::class, "me"])->name("me");
         Route::post("/update", [AuthController::class, "update"])->name("update");
         
+        // Favorite Routes
+        // 
+        Route::post("/favorite/add", [FavoriteController::class, "setFavorite"]);
+        Route::post("/favorite/remove", [FavoriteController::class, "removeFavorite"]);
+        Route::post("/favorites", [FavoriteController::class, "getFavorites"]);
    });
 
-   // Favorite Routes
-   Route::post("/favorite/add", [FavoriteController::class, "setFavorite"]);
-   Route::post("/favorite/remove", [FavoriteController::class, "removeFavorite"]);
-   Route::post("/favorites", [FavoriteController::class, "getFavorites"]);
 
    // Chat Routes
    Route::post("/chat/send", [ChatController::class, "sendMessage"]);

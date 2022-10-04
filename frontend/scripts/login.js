@@ -38,7 +38,11 @@ const validate = () => {
         login_error.innerText='Password cannot be empty!';
     }else{
         login_error.innerText='';
-        checkUser();
+        try {
+            checkUser();
+        } catch (error) {
+            
+        }
     }
 }
 // Putting a listener on login button.
