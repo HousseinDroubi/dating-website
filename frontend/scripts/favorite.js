@@ -108,7 +108,7 @@ const getFavorites = async () =>{
                     ).then((response)=>{
                         if(response.data.status=='deleted'){
                             // If the status was 'deleted', the page will be refreshed.
-                            location. reload();
+                            location.reload();
                         }
                     });
                 }catch(error){

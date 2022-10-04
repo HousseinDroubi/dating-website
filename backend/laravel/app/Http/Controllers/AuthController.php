@@ -7,7 +7,6 @@ use Auth;
 use Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller{
     // Get all parameters using POST method and put our validations which are the same as js side.
