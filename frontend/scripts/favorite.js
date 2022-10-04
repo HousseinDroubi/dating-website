@@ -2,7 +2,7 @@ const whole_users = document.getElementById("whole_users");
 const url_favorites='http://127.0.0.1:8000/api/v0.1/favorites';
 
 const getFavorites = async () =>{
-    api_data = {'token':localStorage.getItem("token"),
+    const api_data = {'token':localStorage.getItem("token"),
                 'favoriting':localStorage.getItem("id"),
                };
     try{
@@ -52,7 +52,7 @@ const getFavorites = async () =>{
         user.appendChild(user_third_child);
              
         const user_details = array_users[i][0];
-        console.log(user_details);
+        const id = user_details.id;
         const username = user_details.username;
         const img_src = user_details.image;
         let gender = user_details.gender;
@@ -72,13 +72,53 @@ const getFavorites = async () =>{
 
         heart.innerHTML =`&#10084;&#65039;`;
         button.innerText = 'Message';
+
+        const goChat = () =>{
+            localStorage.setItem('chat_with_id',id);
+            localStorage.setItem('chat_with_username',username);
+            window.location.href = './conversation.html';
+        }
+        const unlike = async() =>{
+            
+
+
+            const url_remove_favorite='http://127.0.0.1:8000/api/v0.1/favorite/remove';
+
+                const api_data_remove_favorite = {'token':localStorage.getItem("token"),
+                            'favoriting':localStorage.getItem("id"),
+                            'favorited':id,
+                           };
+                try{
+                    await axios.post(
+                        url_remove_favorite,
+                        api_data_remove_favorite,
+                    ).then((response)=>{
+                        if(response.data.status=='deleted'){
+                            location. reload();
+                        }
+                    });
+                }catch(error){
+                    window.location.href = './login.html';
+                }
+            
+
+
+
+
+
+
+
+
+        }
+        heart.addEventListener('click',unlike);
+        button.addEventListener('click',goChat);
+        
         whole_users.appendChild(user);
     }
 
         });
     }catch(error){
-        // window.location.href = './login.html';
-        console.log(error)
+        window.location.href = './login.html';
     }
 }
 getFavorites();
