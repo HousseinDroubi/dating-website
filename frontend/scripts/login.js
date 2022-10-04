@@ -4,6 +4,7 @@ const login_password=document.getElementById("login_password");
 const login_error=document.getElementById("login_error");
 const login_button=document.getElementById("login_button");
 const url_login='http://127.0.0.1:8000/api/v0.1/login';
+
 // Check if the email and password are correct
 const checkUser = async () =>{
     // We just need email and password here in order to get the token.
