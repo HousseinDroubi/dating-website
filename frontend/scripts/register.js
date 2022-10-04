@@ -53,7 +53,7 @@ const registerUser = async () =>{
                 'location':register_location.value,
                 'gender':gender,
                 'bio':register_bio.value,
-                'image':'NA',
+                'image':'na',
                 'interested':interested,
                 };
     try{

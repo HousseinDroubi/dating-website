@@ -12,6 +12,7 @@ const getProfile = async () =>{
         url_me,
         api_data,
         ).then((response)=>{
+            localStorage.setItem("id",response.data.id);
             home_username.innerText=response.data.username;
             if(response.data.image!='na'){
                 home_profile.src=response.data.image;
