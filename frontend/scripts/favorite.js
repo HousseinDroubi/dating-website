@@ -93,7 +93,7 @@ const getFavorites = async () =>{
         }
 
         // The below funtion will remove a specific user from the favorite list of the registered list.
-        const unlike = async() =>{
+        const removeFromFavorite = async() =>{
             
             const url_remove_favorite='http://127.0.0.1:8000/api/v0.1/favorite/remove';
 
@@ -116,7 +116,7 @@ const getFavorites = async () =>{
                 }
 
         }
-        heart.addEventListener('click',unlike);
+        heart.addEventListener('click',removeFromFavorite);
         button.addEventListener('click',goChat);
         
         whole_users.appendChild(user);

@@ -125,6 +125,57 @@ const getUsers = async () =>{
 
                     h5.innerText = user_details.bio; 
                     img.src = user_details.image;
+
+                const goChat = () =>{
+                    localStorage.setItem('chat_with_id',user_details.id);
+                    localStorage.setItem('chat_with_username',user_details.username);
+                    window.location.href = './conversation.html';
+                }
+                button.addEventListener('click',goChat);
+
+                const addFavorite = async() =>{
+                    const url_remove_favorite='http://127.0.0.1:8000/api/v0.1/favorite/add';
+                    const api_data_remove_favorite = {'token':localStorage.getItem("token"),
+                                'favoriting':localStorage.getItem("id"),
+                                'favorited':user_details.id,
+                                };
+                        try{
+                            await axios.post(
+                                url_remove_favorite,
+                                api_data_remove_favorite,
+                            ).then((response)=>{
+                                if(response.data.status=='Success'){
+                                    // If the status was 'deleted', the page will be refreshed.
+                                    window.location.href = './favorite.html';
+                                }
+                            });
+                        }catch(error){
+                            window.location.href = './login.html';
+                        }
+                }
+                heart.addEventListener('click',addFavorite);
+
+                const blockUser = async() =>{
+                    const url_remove_favorite='http://127.0.0.1:8000/api/v0.1/block';
+                    const api_data_remove_favorite = {'token':localStorage.getItem("token"),
+                                'blocking':localStorage.getItem("id"),
+                                'blocked':user_details.id,
+                                };
+                        try{
+                            await axios.post(
+                                url_remove_favorite,
+                                api_data_remove_favorite,
+                            ).then((response)=>{
+                                if(response.data.status=='blocked'){
+                                    // If the status was 'deleted', the page will be refreshed.
+                                    location.reload();
+                                }
+                            });
+                        }catch(error){
+                            window.location.href = './login.html';
+                        }
+                }
+                button_block.addEventListener('click',blockUser);
                     users.appendChild(user);        
                 }
 
