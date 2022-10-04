@@ -14,10 +14,10 @@ class CreateBlockersTable extends Migration
     public function up()
     {
         Schema::create('blockers', function (Blueprint $table) {
+            $table->id();
             $table->integer("blocking");
             $table->integer("blocked");
             $table->timestamps();
-            $table->primary(['blocking','blocked']);
         });
     }
 
