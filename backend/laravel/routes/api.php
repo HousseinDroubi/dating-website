@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\ChatController;
 
 Route::group(["prefix"=> "v0.1"], function(){
    
@@ -18,6 +19,10 @@ Route::group(["prefix"=> "v0.1"], function(){
    Route::post("/favorite/add", [FavoriteController::class, "setFavorite"]);
    Route::post("/favorite/remove", [FavoriteController::class, "removeFavorite"]);
    Route::post("/favorites", [FavoriteController::class, "getFavorites"]);
+
+   // Chat Routes
+   Route::post("/chat/send", [ChatController::class, "sendMessage"]);
+   Route::post("/chat", [ChatController::class, "getMessages"]);
 
    // Register and login requests must not be at the abov middelware since the user doesn't have the token at theses stages.
    Route::post("/register", [AuthController::class, "register"])->name("register");
