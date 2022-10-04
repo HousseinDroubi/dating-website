@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\BlockerController;
 
 Route::group(["prefix"=> "v0.1"], function(){
    
@@ -23,6 +24,11 @@ Route::group(["prefix"=> "v0.1"], function(){
    // Chat Routes
    Route::post("/chat/send", [ChatController::class, "sendMessage"]);
    Route::post("/chat", [ChatController::class, "getMessages"]);
+
+   //Blocker Routes
+   Route::post("/block", [BlockerController::class, "block"]);
+   
+
 
    // Register and login requests must not be at the abov middelware since the user doesn't have the token at theses stages.
    Route::post("/register", [AuthController::class, "register"])->name("register");
