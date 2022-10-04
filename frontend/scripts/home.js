@@ -5,7 +5,7 @@ const home_username = document.getElementById("home_username");
 const url_me='http://127.0.0.1:8000/api/v0.1/me';
 
 const getProfile = async () =>{
-    api_data = {'token':localStorage.getItem("token"),
+    const api_data = {'token':localStorage.getItem("token"),
                };
     try{
         await axios.post(
@@ -25,8 +25,27 @@ const getProfile = async () =>{
 }
 
 getProfile();
-const logoutFromWebiste = () =>{
+const logout = () =>{
     localStorage.clear();
     window.location.href = './login.html';
 }
-home_logout.addEventListener('click',logoutFromWebiste);
+home_logout.addEventListener('click',logout);
+
+const url_home='http://127.0.0.1:8000/api/v0.1/home';
+const getUsers = async () =>{
+    const api_data = {'token':localStorage.getItem("token"),
+                     'id':localStorage.getItem("id"),
+               };
+    try{
+        await axios.post(
+            url_home,
+        api_data,
+        ).then((response)=>{
+            console.log(response.data)
+        });
+    }catch(error){
+        console.log(error);
+        // window.location.href = './login.html';
+    }
+}
+getUsers();

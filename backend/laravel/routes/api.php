@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 Route::group(["prefix"=> "v0.1"], function(){
     // The below routes will require the token in order to be executed.
     Route::group(["middleware" => "auth:api"], function(){
+
         // Get all data about a specific user.
         Route::post("/me", [AuthController::class, "me"])->name("me");
         // Update a specific user data.
@@ -29,20 +30,15 @@ Route::group(["prefix"=> "v0.1"], function(){
         Route::post("/chat/send", [ChatController::class, "sendMessage"]);
         // Get all messages between two users.
         Route::post("/chat", [ChatController::class, "getMessages"]);
+        
+        //Blocker Routes
+        Route::post("/block", [BlockerController::class, "block"]);
+        
+        //Home Routes
+        Route::post("/home", [HomeController::class, "getUsers"]);
    });
-
-   //Blocker Routes
-   Route::post("/block", [BlockerController::class, "block"]);
-   
-   //Home Routes
-   Route::post("/home", [HomeController::class, "getUsers"]);
-
-
 
    // Register and login requests must not be at the abov middelware since the user doesn't have the token at theses stages.
    Route::post("/register", [AuthController::class, "register"])->name("register");
    Route::post("/login", [AuthController::class, "login"])->name("login");
-
-   Route::get("/not_found", [LandingController::class, "notFound"])->name("not-found");
-
 });
