@@ -9,23 +9,27 @@ use App\Http\Controllers\BlockerController;
 use App\Http\Controllers\HomeController;
 
 Route::group(["prefix"=> "v0.1"], function(){
-   
+    // The below routes will require the token in order to be executed.
     Route::group(["middleware" => "auth:api"], function(){
-        // The below routes will require the token in order to be executed.
+        // Get all data about a specific user.
         Route::post("/me", [AuthController::class, "me"])->name("me");
+        // Update a specific user data.
         Route::post("/update", [AuthController::class, "update"])->name("update");
         
         // Favorite Routes
-        // 
+        // Add user to favorite list.
         Route::post("/favorite/add", [FavoriteController::class, "setFavorite"]);
+        // Delete user from favorite list.
         Route::post("/favorite/remove", [FavoriteController::class, "removeFavorite"]);
+        // Get all favorite list.
         Route::post("/favorites", [FavoriteController::class, "getFavorites"]);
+
+        // Chat Routes
+        // Send message.
+        Route::post("/chat/send", [ChatController::class, "sendMessage"]);
+        // Get all messages between two users.
+        Route::post("/chat", [ChatController::class, "getMessages"]);
    });
-
-
-   // Chat Routes
-   Route::post("/chat/send", [ChatController::class, "sendMessage"]);
-   Route::post("/chat", [ChatController::class, "getMessages"]);
 
    //Blocker Routes
    Route::post("/block", [BlockerController::class, "block"]);
