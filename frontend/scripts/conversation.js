@@ -66,7 +66,6 @@ const sendMessage = async() =>{
             url_send_message,
             api_data,
             ).then((response)=>{
-                console.log(response.data)
                 if(response.data.status=='done'){
                     location.reload();
                 }
