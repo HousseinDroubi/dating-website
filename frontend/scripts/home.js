@@ -188,8 +188,6 @@ const getUsers = async () =>{
                 whole_data_parent.appendChild(users);
             }
 
-
-            1
         });
     }catch(error){
         window.location.href = './login.html';
