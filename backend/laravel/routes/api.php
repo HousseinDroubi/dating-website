@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\BlockerController;
+use App\Http\Controllers\HomeController;
 
 Route::group(["prefix"=> "v0.1"], function(){
    
@@ -28,6 +29,9 @@ Route::group(["prefix"=> "v0.1"], function(){
    //Blocker Routes
    Route::post("/block", [BlockerController::class, "block"]);
    
+   //Home Routes
+   Route::post("/home", [HomeController::class, "getUsers"]);
+
 
 
    // Register and login requests must not be at the abov middelware since the user doesn't have the token at theses stages.
