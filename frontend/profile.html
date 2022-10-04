@@ -17,7 +17,7 @@
                     <h1 class="hero-container-title">Edit profile</h1>
                 </div>
                 <div>
-                    <img src="assets/images/default-user.jpg" alt="" class=" margin-top-2 cursor-pointer resize-image" id="home_profile">
+                    <img src="assets/images/default-user.jpg" alt="" class=" margin-top-2 cursor-pointer resize-image" id="edit_profile_image">
                 </div>
                 <div>
                     <label for="edit_profile_pick_up" class="cursor-pointer font-weight-bloder">Select Image</label>
@@ -30,7 +30,7 @@
                     <input type="number" id="edit_profile_age" class="input margin-top-1" placeholder="age" maxlength="3">
                 </div>
                 <div>
-                    <button class="btn margin-top-2" id="edit_profile_get_location">Get location</button>
+                    <input type="text" id="edit_profile_location" class="input margin-top-1" placeholder="Location">
                 </div>
                 <div class="hero-container-gender flex flex-column">
                     <div>
@@ -66,6 +66,9 @@
                 </div>
                 <div>
                     <textarea id="edit_profile_bio" class="text-area input input margin-top-1" rows="4" cols="40" placeholder="Bio..."></textarea>
+                </div>
+                <div>
+                    <p class="error font-weight-bloder" id="edit_profile_error"></p>
                 </div>
                 <div>
                     <button class="btn margin-top-2" id="edit_profile_button">Edit</button>

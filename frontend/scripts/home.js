@@ -4,7 +4,7 @@ const home_username = document.getElementById("home_username");
 
 const url_me='http://127.0.0.1:8000/api/v0.1/me';
 
-const getMe = async () =>{
+const getProfile = async () =>{
     api_data = {'token':localStorage.getItem("token"),
                };
     try{
@@ -19,11 +19,11 @@ const getMe = async () =>{
             
         });
     }catch(error){
-        login_error.innerText='Something went wrong';
+        window.location.href = './login.html';
     }
 }
 
-getMe();
+getProfile();
 const logoutFromWebiste = () =>{
     localStorage.clear();
     window.location.href = './login.html';
